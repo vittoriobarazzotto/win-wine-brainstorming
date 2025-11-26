@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brainstorming - Win & Wine</title>
+    <style>
+        body {
+            background-color: #f2ede2;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .brainstorming-title {
+            font-size: 5rem;
+            font-weight: bold;
+            color: rgba(0, 0, 0, 0.1);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            user-select: none;
+        }
+        
+        .container {
+            max-width: 800px;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .buttons-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .project-button {
+            background-color: #8a6d3b;
+            color: white;
+            border: none;
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-button:hover {
+            background-color: #6b5029;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .details {
+            display: none;
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            text-align: left;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .details h3 {
+            color: #8a6d3b;
+            margin-top: 0;
+        }
+        
+        .reason {
+            background-color: #f9f5eb;
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+        }
+        
+        .reason-title {
+            font-weight: bold;
+            color: #8a6d3b;
+        }
+        
+        .selected {
+            background-color: #5a8c5a;
+        }
+        
+        .selected:hover {
+            background-color: #4a734a;
+        }
+    </style>
+</head>
+<body>
+    <div class="brainstorming-title">BRAINSTORMING</div>
+    
+    <div class="container">
+        <h1>Progetto Win & Wine</h1>
+        <p>Esplora le idee considerate per valorizzare la Tenuta Bossi Fedrigotti</p>
+        
+        <div class="buttons-container">
+            <button class="project-button" onclick="showDetails('mini-serie')">Mini serie</button>
+            <button class="project-button" onclick="showDetails('mappatura')">Mappatura 3D</button>
+            <button class="project-button" onclick="showDetails('spettacoli')">Spettacoli notturni</button>
+            <button class="project-button selected" onclick="showDetails('videogame')">Video Game</button>
+        </div>
+        
+        <div id="mini-serie" class="details">
+            <h3>Mini Serie - Storia della Tenuta</h3>
+            <p>Una serie di 6 puntate che narra le avventure dei familiari dell'autrice e gli ospiti della tenuta durante 1943-45, tratta dal libro "Casa di Guerra" di Isabella Bossi Fedrigotti.</p>
+            
+            <div class="reason">
+                <span class="reason-title">Perché abbiamo scartato questa idea:</span><br>
+                - Produzione complessa e costosa<br>
+                - Richiede attrezzature professionali e droni<br>
+                - Tempi di realizzazione molto lunghi<br>
+                - Difficoltà logistiche per le riprese in loco
+            </div>
+        </div>
+        
+        <div id="mappatura" class="details">
+            <h3>Mappatura 3D in loco</h3>
+            <p>Applicando proiettori in punti specifici della tenuta per ricreare i personaggi del libro e le scene storiche.</p>
+            
+            <div class="reason">
+                <span class="reason-title">Perché abbiamo scartato questa idea:</span><br>
+                - Applicare proiettori a una tenuta pluricentenaria non è una buona idea<br>
+                - Impatto visivo sull'architettura storica<br>
+                - Complessità tecnica dell'installazione<br>
+                - Manutenzione costosa
+            </div>
+        </div>
+        
+        <div id="spettacoli" class="details">
+            <h3>Spettacoli notturni "Sotto le stelle di Sant'Antonio"</h3>
+            <p>Spettacoli che combinano proiezioni 3D, giochi di luce e serenate a lume di candela per un'esperienza romantica.</p>
+            
+            <div class="reason">
+                <span class="reason-title">Perché abbiamo scartato questa idea:</span><br>
+                - Esperienza principalmente sensoriale e poco digitale<br>
+                - Rischia di allontanarsi troppo dalla challenge<br>
+                - Realizzazione incerta<br>
+                - Necessità di permessi speciali<br>
+                - Limitata riproducibilità e scalabilità
+            </div>
+        </div>
+        
+        <div id="videogame" class="details">
+            <h3>Video Game - L'idea selezionata</h3>
+            <p>Win & Wine trasforma il mondo del vino in un'esperienza ludica e narrativa unica, combinando gamification, territorio e storytelling storico.</p>
+            
+            <div class="reason">
+                <span class="reason-title">Perché abbiamo scelto questa idea:</span><br>
+                - Esperienza interattiva e coinvolgente<br>
+                - Ricostruzione digitale fedele della tenuta tramite mappatura 3D e fotogrammetria<br>
+                - Trama ispirata al libro "Case di guerra"<br>
+                - Incentiva il turismo esperienziale attraverso codici sulle bottiglie<br>
+                - Monetizzazione integrata nel prodotto<br>
+                - Scalabile e riproducibile<br>
+                - Allinea perfettamente tecnologia, storytelling e territorio
+            </div>
+            
+            <p>Il videogioco 3D immersivo permette agli utenti di esplorare luoghi, scoprire segreti, sbloccare missioni e conoscere la storia del territorio attraverso una veste narrativa e interattiva.</p>
+        </div>
+    </div>
+
+    <script>
+        function showDetails(project) {
+            // Nascondi tutti i dettagli
+            document.querySelectorAll('.details').forEach(detail => {
+                detail.style.display = 'none';
+            });
+            
+            // Mostra i dettagli del progetto selezionato
+            document.getElementById(project).style.display = 'block';
+        }
+        
+        // Mostra i dettagli del videogame all'avvio
+        window.onload = function() {
+            showDetails('videogame');
+        };
+    </script>
+</body>
+</html>
